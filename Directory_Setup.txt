@@ -1,0 +1,42 @@
+.
+├── cooler
+│   └── cooler-binder
+│       ├── cooler_api.ipynb
+│       ├── cooler_cli.ipynb
+│       ├── data
+│       │   ├── b37.chrom.sizes
+│       │   ├── GSM1551552_HIC003_merged_nodups.txt.subset.gz
+│       │   ├── Rao2014-GM12878-MboI-allreps-filtered.1000kb.cool
+│       │   └── single-cell
+│       │       ├── GSM2687248_41669_ACAGTG-R1-DpnII.100000.cool
+│       │       ├── GSM2687249_41670_GGCTAC-R1-DpnII.100000.cool
+│       │       ├── GSM2687250_41671_TTAGGC-R1-DpnII.100000.cool
+│       │       └── outfile_test.scool
+│       ├── environment.yml
+│       ├── README.md
+│       └── scool_api.ipynb
+├── data
+│   ├── juicer
+│   │   ├── test.hic
+│   │   └── test.txt.gz
+│   ├── outputs
+│   │   └── juicer
+│   │       ├── corr_matrix.txt
+│   │       ├── eigenvector.txt
+│   │       ├── oe_matrix.txt
+│   │       └── pearson_matrix.txt
+│   └── Rao2014
+│       └── samples
+│           └── GSM1551550_HIC001.hic
+├── Directory_setup.txt
+├── juicer
+│   ├── Juicebox
+│   │   └── Juicebox_1.11.08.jar
+│   ├── juicer_tools_1.22.01.jar
+│   └── juicer_tools.jar -> juicer_tools_1.22.01.jar
+├── main.ipynb
+└── straw
+    └── example
+        └── Analyzing_Hi_C_Data_with_Straw.ipynb
+
+14 directories, 25 files
