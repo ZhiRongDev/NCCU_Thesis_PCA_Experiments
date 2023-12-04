@@ -1,9 +1,13 @@
-# rm -rf /home/jordan990301/PCA_Experiments/data/outputs/juicer
-# mkdir /home/jordan990301/PCA_Experiments/data/outputs/juicer
-# mkdir /home/jordan990301/PCA_Experiments/data/outputs/juicer/origin
+# rm -rf /home/jordan990301/PCA_Experiments/outputs/juicer
+# mkdir /home/jordan990301/PCA_Experiments/outputs/juicer
+# mkdir /home/jordan990301/PCA_Experiments/outputs/juicer/origin
+# mkdir /home/jordan990301/PCA_Experiments/outputs/juicer/My_PC1
+# mkdir /home/jordan990301/PCA_Experiments/outputs/juicer/origin_dropna
 
-# HIC_PATH="/home/jordan990301/PCA_Experiments/data/Rao2014/samples/GSM1551550_HIC001.hic"
-# OUTPUT_PATH="/home/jordan990301/PCA_Experiments/data/outputs/juicer"
+# touch /home/jordan990301/PCA_Experiments/outputs/Logs/GM12878_primary_replicate_combined_30.log
+
+# HIC_PATH="/home/jordan990301/PCA_Experiments/data/Rao2014/GM12878/MAPQGE30/GSE63525_GM12878_insitu_primary_replicate_combined_30.hic"
+# OUTPUT_PATH="/home/jordan990301/PCA_Experiments/outputs/juicer"
 # JUICER_TOOLS_PATH="/home/jordan990301/PCA_Experiments/juicer/juicer_tools.jar"
 # NORM="KR"
 # TYPE="BP"
