@@ -1,0 +1,539 @@
+(base) ➜  PCA_Experiments git:(main) ✗ tree ./
+./
+├── archives
+│   ├── Comare_Different_PC.ipynb
+│   ├── PCA.ipynb
+│   ├── PCA.py
+│   ├── read_hic.ipynb
+│   └── run.sh
+├── cooler
+│   └── cooler-binder
+│       ├── cooler_api.ipynb
+│       ├── cooler_cli.ipynb
+│       ├── data
+│       │   ├── b37.chrom.sizes
+│       │   ├── GSM1551552_HIC003_merged_nodups.txt.subset.gz
+│       │   ├── Rao2014-GM12878-MboI-allreps-filtered.1000kb.cool
+│       │   └── single-cell
+│       │       ├── GSM2687248_41669_ACAGTG-R1-DpnII.100000.cool
+│       │       ├── GSM2687249_41670_GGCTAC-R1-DpnII.100000.cool
+│       │       ├── GSM2687250_41671_TTAGGC-R1-DpnII.100000.cool
+│       │       └── outfile_test.scool
+│       ├── environment.yml
+│       ├── README.md
+│       └── scool_api.ipynb
+├── data
+│   └── juicer_example
+│       ├── test.hic
+│       └── test.txt.gz
+├── docs
+│   ├── GSE63525
+│   │   ├── GSE63525_CH12-LX_README.rtf
+│   │   ├── GSE63525_GM12878_combined_README.rtf
+│   │   ├── GSE63525_GM12878_primary_README.rtf
+│   │   ├── GSE63525_GM12878_replicate_README.rtf
+│   │   ├── GSE63525_HMEC_README.rtf
+│   │   ├── GSE63525_HUVEC_README.rtf
+│   │   ├── GSE63525_IMR90_README.rtf
+│   │   ├── GSE63525_K562_README.rtf
+│   │   ├── GSE63525_KBM7_README.rtf
+│   │   ├── GSE63525_NHEK_README.rtf
+│   │   └── GSE63525_OVERALL_README.rtf
+│   ├── Math_Deduction
+│   │   ├── Step1.jpg
+│   │   └── Step2.jpg
+│   └── Note.md
+├── juicer
+│   ├── Juicebox
+│   │   └── Juicebox_1.11.08.jar
+│   ├── juicer_tools_1.22.01.jar
+│   └── juicer_tools.jar -> juicer_tools_1.22.01.jar
+├── New_idea
+│   ├── Create_Plots.ipynb
+│   ├── GM12878_Chr1_100Kb.ipynb
+│   ├── GM12878_Chr2_100Kb.ipynb
+│   ├── GM12878_Chr3_100Kb.ipynb
+│   └── GM12878.ipynb
+├── outputs
+│   ├── Compare_EV1_Corr
+│   │   ├── GM12878_1Mb
+│   │   │   ├── eigenvector.txt
+│   │   │   ├── EV1_Dropna.txt
+│   │   │   ├── Pearson_Entry1_Dropna.txt
+│   │   │   └── pearson_matrix.txt
+│   │   ├── GM12878_Chr1_100Kb
+│   │   │   ├── eigenvector.txt
+│   │   │   ├── EV1_Dropna.txt
+│   │   │   ├── Pearson_Entry1_Dropna.txt
+│   │   │   └── pearson_matrix.txt
+│   │   ├── GM12878_Chr2_100Kb
+│   │   │   ├── eigenvector.txt
+│   │   │   ├── EV1_Dropna.txt
+│   │   │   ├── Pearson_Entry1_Dropna.txt
+│   │   │   └── pearson_matrix.txt
+│   │   └── GM12878_Chr3_100Kb
+│   │       ├── eigenvector.txt
+│   │       └── pearson_matrix.txt
+│   ├── GM12878
+│   │   ├── 100Kb
+│   │   │   ├── My_PC1
+│   │   │   │   ├── My_PC1_chrom10.txt
+│   │   │   │   ├── My_PC1_chrom11.txt
+│   │   │   │   ├── My_PC1_chrom12.txt
+│   │   │   │   ├── My_PC1_chrom13.txt
+│   │   │   │   ├── My_PC1_chrom14.txt
+│   │   │   │   ├── My_PC1_chrom15.txt
+│   │   │   │   ├── My_PC1_chrom16.txt
+│   │   │   │   ├── My_PC1_chrom17.txt
+│   │   │   │   ├── My_PC1_chrom18.txt
+│   │   │   │   ├── My_PC1_chrom19.txt
+│   │   │   │   ├── My_PC1_chrom1.txt
+│   │   │   │   ├── My_PC1_chrom20.txt
+│   │   │   │   ├── My_PC1_chrom21.txt
+│   │   │   │   ├── My_PC1_chrom22.txt
+│   │   │   │   ├── My_PC1_chrom2.txt
+│   │   │   │   ├── My_PC1_chrom3.txt
+│   │   │   │   ├── My_PC1_chrom4.txt
+│   │   │   │   ├── My_PC1_chrom5.txt
+│   │   │   │   ├── My_PC1_chrom6.txt
+│   │   │   │   ├── My_PC1_chrom7.txt
+│   │   │   │   ├── My_PC1_chrom8.txt
+│   │   │   │   ├── My_PC1_chrom9.txt
+│   │   │   │   ├── My_PC1_chromX.txt
+│   │   │   │   └── My_PC1_chromY.txt
+│   │   │   ├── origin
+│   │   │   │   ├── origin_pc1_chrom10.txt
+│   │   │   │   ├── origin_pc1_chrom11.txt
+│   │   │   │   ├── origin_pc1_chrom12.txt
+│   │   │   │   ├── origin_pc1_chrom13.txt
+│   │   │   │   ├── origin_pc1_chrom14.txt
+│   │   │   │   ├── origin_pc1_chrom15.txt
+│   │   │   │   ├── origin_pc1_chrom16.txt
+│   │   │   │   ├── origin_pc1_chrom17.txt
+│   │   │   │   ├── origin_pc1_chrom18.txt
+│   │   │   │   ├── origin_pc1_chrom19.txt
+│   │   │   │   ├── origin_pc1_chrom1.txt
+│   │   │   │   ├── origin_pc1_chrom20.txt
+│   │   │   │   ├── origin_pc1_chrom21.txt
+│   │   │   │   ├── origin_pc1_chrom22.txt
+│   │   │   │   ├── origin_pc1_chrom2.txt
+│   │   │   │   ├── origin_pc1_chrom3.txt
+│   │   │   │   ├── origin_pc1_chrom4.txt
+│   │   │   │   ├── origin_pc1_chrom5.txt
+│   │   │   │   ├── origin_pc1_chrom6.txt
+│   │   │   │   ├── origin_pc1_chrom7.txt
+│   │   │   │   ├── origin_pc1_chrom8.txt
+│   │   │   │   ├── origin_pc1_chrom9.txt
+│   │   │   │   ├── origin_pc1_chromX.txt
+│   │   │   │   ├── origin_pc1_chromY.txt
+│   │   │   │   ├── origin_pearson_chrom10.txt
+│   │   │   │   ├── origin_pearson_chrom11.txt
+│   │   │   │   ├── origin_pearson_chrom12.txt
+│   │   │   │   ├── origin_pearson_chrom13.txt
+│   │   │   │   ├── origin_pearson_chrom14.txt
+│   │   │   │   ├── origin_pearson_chrom15.txt
+│   │   │   │   ├── origin_pearson_chrom16.txt
+│   │   │   │   ├── origin_pearson_chrom17.txt
+│   │   │   │   ├── origin_pearson_chrom18.txt
+│   │   │   │   ├── origin_pearson_chrom19.txt
+│   │   │   │   ├── origin_pearson_chrom1.txt
+│   │   │   │   ├── origin_pearson_chrom20.txt
+│   │   │   │   ├── origin_pearson_chrom21.txt
+│   │   │   │   ├── origin_pearson_chrom22.txt
+│   │   │   │   ├── origin_pearson_chrom2.txt
+│   │   │   │   ├── origin_pearson_chrom3.txt
+│   │   │   │   ├── origin_pearson_chrom4.txt
+│   │   │   │   ├── origin_pearson_chrom5.txt
+│   │   │   │   ├── origin_pearson_chrom6.txt
+│   │   │   │   ├── origin_pearson_chrom7.txt
+│   │   │   │   ├── origin_pearson_chrom8.txt
+│   │   │   │   ├── origin_pearson_chrom9.txt
+│   │   │   │   ├── origin_pearson_chromX.txt
+│   │   │   │   └── origin_pearson_chromY.txt
+│   │   │   └── origin_dropna
+│   │   │       ├── origin_dropna_PC1_chrom10.txt
+│   │   │       ├── origin_dropna_PC1_chrom11.txt
+│   │   │       ├── origin_dropna_PC1_chrom12.txt
+│   │   │       ├── origin_dropna_PC1_chrom13.txt
+│   │   │       ├── origin_dropna_PC1_chrom14.txt
+│   │   │       ├── origin_dropna_PC1_chrom15.txt
+│   │   │       ├── origin_dropna_PC1_chrom16.txt
+│   │   │       ├── origin_dropna_PC1_chrom17.txt
+│   │   │       ├── origin_dropna_PC1_chrom18.txt
+│   │   │       ├── origin_dropna_PC1_chrom19.txt
+│   │   │       ├── origin_dropna_PC1_chrom1.txt
+│   │   │       ├── origin_dropna_PC1_chrom20.txt
+│   │   │       ├── origin_dropna_PC1_chrom21.txt
+│   │   │       ├── origin_dropna_PC1_chrom22.txt
+│   │   │       ├── origin_dropna_PC1_chrom2.txt
+│   │   │       ├── origin_dropna_PC1_chrom3.txt
+│   │   │       ├── origin_dropna_PC1_chrom4.txt
+│   │   │       ├── origin_dropna_PC1_chrom5.txt
+│   │   │       ├── origin_dropna_PC1_chrom6.txt
+│   │   │       ├── origin_dropna_PC1_chrom7.txt
+│   │   │       ├── origin_dropna_PC1_chrom8.txt
+│   │   │       ├── origin_dropna_PC1_chrom9.txt
+│   │   │       ├── origin_dropna_PC1_chromX.txt
+│   │   │       └── origin_dropna_PC1_chromY.txt
+│   │   └── 1Mb
+│   │       ├── My_PC1
+│   │       │   ├── My_PC1_chrom10.txt
+│   │       │   ├── My_PC1_chrom11.txt
+│   │       │   ├── My_PC1_chrom12.txt
+│   │       │   ├── My_PC1_chrom13.txt
+│   │       │   ├── My_PC1_chrom14.txt
+│   │       │   ├── My_PC1_chrom15.txt
+│   │       │   ├── My_PC1_chrom16.txt
+│   │       │   ├── My_PC1_chrom17.txt
+│   │       │   ├── My_PC1_chrom18.txt
+│   │       │   ├── My_PC1_chrom19.txt
+│   │       │   ├── My_PC1_chrom1.txt
+│   │       │   ├── My_PC1_chrom20.txt
+│   │       │   ├── My_PC1_chrom21.txt
+│   │       │   ├── My_PC1_chrom22.txt
+│   │       │   ├── My_PC1_chrom2.txt
+│   │       │   ├── My_PC1_chrom3.txt
+│   │       │   ├── My_PC1_chrom4.txt
+│   │       │   ├── My_PC1_chrom5.txt
+│   │       │   ├── My_PC1_chrom6.txt
+│   │       │   ├── My_PC1_chrom7.txt
+│   │       │   ├── My_PC1_chrom8.txt
+│   │       │   ├── My_PC1_chrom9.txt
+│   │       │   ├── My_PC1_chromX.txt
+│   │       │   └── My_PC1_chromY.txt
+│   │       ├── origin
+│   │       │   ├── origin_pc1_chrom10.txt
+│   │       │   ├── origin_pc1_chrom11.txt
+│   │       │   ├── origin_pc1_chrom12.txt
+│   │       │   ├── origin_pc1_chrom13.txt
+│   │       │   ├── origin_pc1_chrom14.txt
+│   │       │   ├── origin_pc1_chrom15.txt
+│   │       │   ├── origin_pc1_chrom16.txt
+│   │       │   ├── origin_pc1_chrom17.txt
+│   │       │   ├── origin_pc1_chrom18.txt
+│   │       │   ├── origin_pc1_chrom19.txt
+│   │       │   ├── origin_pc1_chrom1.txt
+│   │       │   ├── origin_pc1_chrom20.txt
+│   │       │   ├── origin_pc1_chrom21.txt
+│   │       │   ├── origin_pc1_chrom22.txt
+│   │       │   ├── origin_pc1_chrom2.txt
+│   │       │   ├── origin_pc1_chrom3.txt
+│   │       │   ├── origin_pc1_chrom4.txt
+│   │       │   ├── origin_pc1_chrom5.txt
+│   │       │   ├── origin_pc1_chrom6.txt
+│   │       │   ├── origin_pc1_chrom7.txt
+│   │       │   ├── origin_pc1_chrom8.txt
+│   │       │   ├── origin_pc1_chrom9.txt
+│   │       │   ├── origin_pc1_chromX.txt
+│   │       │   ├── origin_pc1_chromY.txt
+│   │       │   ├── origin_pearson_chrom10.txt
+│   │       │   ├── origin_pearson_chrom11.txt
+│   │       │   ├── origin_pearson_chrom12.txt
+│   │       │   ├── origin_pearson_chrom13.txt
+│   │       │   ├── origin_pearson_chrom14.txt
+│   │       │   ├── origin_pearson_chrom15.txt
+│   │       │   ├── origin_pearson_chrom16.txt
+│   │       │   ├── origin_pearson_chrom17.txt
+│   │       │   ├── origin_pearson_chrom18.txt
+│   │       │   ├── origin_pearson_chrom19.txt
+│   │       │   ├── origin_pearson_chrom1.txt
+│   │       │   ├── origin_pearson_chrom20.txt
+│   │       │   ├── origin_pearson_chrom21.txt
+│   │       │   ├── origin_pearson_chrom22.txt
+│   │       │   ├── origin_pearson_chrom2.txt
+│   │       │   ├── origin_pearson_chrom3.txt
+│   │       │   ├── origin_pearson_chrom4.txt
+│   │       │   ├── origin_pearson_chrom5.txt
+│   │       │   ├── origin_pearson_chrom6.txt
+│   │       │   ├── origin_pearson_chrom7.txt
+│   │       │   ├── origin_pearson_chrom8.txt
+│   │       │   ├── origin_pearson_chrom9.txt
+│   │       │   ├── origin_pearson_chromX.txt
+│   │       │   └── origin_pearson_chromY.txt
+│   │       └── origin_dropna
+│   │           ├── origin_dropna_PC1_chrom10.txt
+│   │           ├── origin_dropna_PC1_chrom11.txt
+│   │           ├── origin_dropna_PC1_chrom12.txt
+│   │           ├── origin_dropna_PC1_chrom13.txt
+│   │           ├── origin_dropna_PC1_chrom14.txt
+│   │           ├── origin_dropna_PC1_chrom15.txt
+│   │           ├── origin_dropna_PC1_chrom16.txt
+│   │           ├── origin_dropna_PC1_chrom17.txt
+│   │           ├── origin_dropna_PC1_chrom18.txt
+│   │           ├── origin_dropna_PC1_chrom19.txt
+│   │           ├── origin_dropna_PC1_chrom1.txt
+│   │           ├── origin_dropna_PC1_chrom20.txt
+│   │           ├── origin_dropna_PC1_chrom21.txt
+│   │           ├── origin_dropna_PC1_chrom22.txt
+│   │           ├── origin_dropna_PC1_chrom2.txt
+│   │           ├── origin_dropna_PC1_chrom3.txt
+│   │           ├── origin_dropna_PC1_chrom4.txt
+│   │           ├── origin_dropna_PC1_chrom5.txt
+│   │           ├── origin_dropna_PC1_chrom6.txt
+│   │           ├── origin_dropna_PC1_chrom7.txt
+│   │           ├── origin_dropna_PC1_chrom8.txt
+│   │           ├── origin_dropna_PC1_chrom9.txt
+│   │           ├── origin_dropna_PC1_chromX.txt
+│   │           └── origin_dropna_PC1_chromY.txt
+│   ├── K562
+│   │   ├── 100Kb
+│   │   │   ├── My_PC1
+│   │   │   │   ├── My_PC1_chrom10.txt
+│   │   │   │   ├── My_PC1_chrom11.txt
+│   │   │   │   ├── My_PC1_chrom12.txt
+│   │   │   │   ├── My_PC1_chrom13.txt
+│   │   │   │   ├── My_PC1_chrom14.txt
+│   │   │   │   ├── My_PC1_chrom15.txt
+│   │   │   │   ├── My_PC1_chrom16.txt
+│   │   │   │   ├── My_PC1_chrom17.txt
+│   │   │   │   ├── My_PC1_chrom18.txt
+│   │   │   │   ├── My_PC1_chrom19.txt
+│   │   │   │   ├── My_PC1_chrom1.txt
+│   │   │   │   ├── My_PC1_chrom20.txt
+│   │   │   │   ├── My_PC1_chrom21.txt
+│   │   │   │   ├── My_PC1_chrom22.txt
+│   │   │   │   ├── My_PC1_chrom2.txt
+│   │   │   │   ├── My_PC1_chrom3.txt
+│   │   │   │   ├── My_PC1_chrom4.txt
+│   │   │   │   ├── My_PC1_chrom5.txt
+│   │   │   │   ├── My_PC1_chrom6.txt
+│   │   │   │   ├── My_PC1_chrom7.txt
+│   │   │   │   ├── My_PC1_chrom8.txt
+│   │   │   │   ├── My_PC1_chrom9.txt
+│   │   │   │   ├── My_PC1_chromX.txt
+│   │   │   │   └── My_PC1_chromY.txt
+│   │   │   ├── origin
+│   │   │   │   ├── origin_pc1_chrom10.txt
+│   │   │   │   ├── origin_pc1_chrom11.txt
+│   │   │   │   ├── origin_pc1_chrom12.txt
+│   │   │   │   ├── origin_pc1_chrom13.txt
+│   │   │   │   ├── origin_pc1_chrom14.txt
+│   │   │   │   ├── origin_pc1_chrom15.txt
+│   │   │   │   ├── origin_pc1_chrom16.txt
+│   │   │   │   ├── origin_pc1_chrom17.txt
+│   │   │   │   ├── origin_pc1_chrom18.txt
+│   │   │   │   ├── origin_pc1_chrom19.txt
+│   │   │   │   ├── origin_pc1_chrom1.txt
+│   │   │   │   ├── origin_pc1_chrom20.txt
+│   │   │   │   ├── origin_pc1_chrom21.txt
+│   │   │   │   ├── origin_pc1_chrom22.txt
+│   │   │   │   ├── origin_pc1_chrom2.txt
+│   │   │   │   ├── origin_pc1_chrom3.txt
+│   │   │   │   ├── origin_pc1_chrom4.txt
+│   │   │   │   ├── origin_pc1_chrom5.txt
+│   │   │   │   ├── origin_pc1_chrom6.txt
+│   │   │   │   ├── origin_pc1_chrom7.txt
+│   │   │   │   ├── origin_pc1_chrom8.txt
+│   │   │   │   ├── origin_pc1_chrom9.txt
+│   │   │   │   ├── origin_pc1_chromX.txt
+│   │   │   │   ├── origin_pc1_chromY.txt
+│   │   │   │   ├── origin_pearson_chrom10.txt
+│   │   │   │   ├── origin_pearson_chrom11.txt
+│   │   │   │   ├── origin_pearson_chrom12.txt
+│   │   │   │   ├── origin_pearson_chrom13.txt
+│   │   │   │   ├── origin_pearson_chrom14.txt
+│   │   │   │   ├── origin_pearson_chrom15.txt
+│   │   │   │   ├── origin_pearson_chrom16.txt
+│   │   │   │   ├── origin_pearson_chrom17.txt
+│   │   │   │   ├── origin_pearson_chrom18.txt
+│   │   │   │   ├── origin_pearson_chrom19.txt
+│   │   │   │   ├── origin_pearson_chrom1.txt
+│   │   │   │   ├── origin_pearson_chrom20.txt
+│   │   │   │   ├── origin_pearson_chrom21.txt
+│   │   │   │   ├── origin_pearson_chrom22.txt
+│   │   │   │   ├── origin_pearson_chrom2.txt
+│   │   │   │   ├── origin_pearson_chrom3.txt
+│   │   │   │   ├── origin_pearson_chrom4.txt
+│   │   │   │   ├── origin_pearson_chrom5.txt
+│   │   │   │   ├── origin_pearson_chrom6.txt
+│   │   │   │   ├── origin_pearson_chrom7.txt
+│   │   │   │   ├── origin_pearson_chrom8.txt
+│   │   │   │   ├── origin_pearson_chrom9.txt
+│   │   │   │   ├── origin_pearson_chromX.txt
+│   │   │   │   └── origin_pearson_chromY.txt
+│   │   │   └── origin_dropna
+│   │   │       ├── origin_dropna_PC1_chrom10.txt
+│   │   │       ├── origin_dropna_PC1_chrom11.txt
+│   │   │       ├── origin_dropna_PC1_chrom12.txt
+│   │   │       ├── origin_dropna_PC1_chrom13.txt
+│   │   │       ├── origin_dropna_PC1_chrom14.txt
+│   │   │       ├── origin_dropna_PC1_chrom15.txt
+│   │   │       ├── origin_dropna_PC1_chrom16.txt
+│   │   │       ├── origin_dropna_PC1_chrom17.txt
+│   │   │       ├── origin_dropna_PC1_chrom18.txt
+│   │   │       ├── origin_dropna_PC1_chrom19.txt
+│   │   │       ├── origin_dropna_PC1_chrom1.txt
+│   │   │       ├── origin_dropna_PC1_chrom20.txt
+│   │   │       ├── origin_dropna_PC1_chrom21.txt
+│   │   │       ├── origin_dropna_PC1_chrom22.txt
+│   │   │       ├── origin_dropna_PC1_chrom2.txt
+│   │   │       ├── origin_dropna_PC1_chrom3.txt
+│   │   │       ├── origin_dropna_PC1_chrom4.txt
+│   │   │       ├── origin_dropna_PC1_chrom5.txt
+│   │   │       ├── origin_dropna_PC1_chrom6.txt
+│   │   │       ├── origin_dropna_PC1_chrom7.txt
+│   │   │       ├── origin_dropna_PC1_chrom8.txt
+│   │   │       ├── origin_dropna_PC1_chrom9.txt
+│   │   │       ├── origin_dropna_PC1_chromX.txt
+│   │   │       └── origin_dropna_PC1_chromY.txt
+│   │   └── 1Mb
+│   │       ├── My_PC1
+│   │       │   ├── My_PC1_chrom10.txt
+│   │       │   ├── My_PC1_chrom11.txt
+│   │       │   ├── My_PC1_chrom12.txt
+│   │       │   ├── My_PC1_chrom13.txt
+│   │       │   ├── My_PC1_chrom14.txt
+│   │       │   ├── My_PC1_chrom15.txt
+│   │       │   ├── My_PC1_chrom16.txt
+│   │       │   ├── My_PC1_chrom17.txt
+│   │       │   ├── My_PC1_chrom18.txt
+│   │       │   ├── My_PC1_chrom19.txt
+│   │       │   ├── My_PC1_chrom1.txt
+│   │       │   ├── My_PC1_chrom20.txt
+│   │       │   ├── My_PC1_chrom21.txt
+│   │       │   ├── My_PC1_chrom22.txt
+│   │       │   ├── My_PC1_chrom2.txt
+│   │       │   ├── My_PC1_chrom3.txt
+│   │       │   ├── My_PC1_chrom4.txt
+│   │       │   ├── My_PC1_chrom5.txt
+│   │       │   ├── My_PC1_chrom6.txt
+│   │       │   ├── My_PC1_chrom7.txt
+│   │       │   ├── My_PC1_chrom8.txt
+│   │       │   ├── My_PC1_chrom9.txt
+│   │       │   ├── My_PC1_chromX.txt
+│   │       │   └── My_PC1_chromY.txt
+│   │       ├── origin
+│   │       │   ├── origin_pc1_chrom10.txt
+│   │       │   ├── origin_pc1_chrom11.txt
+│   │       │   ├── origin_pc1_chrom12.txt
+│   │       │   ├── origin_pc1_chrom13.txt
+│   │       │   ├── origin_pc1_chrom14.txt
+│   │       │   ├── origin_pc1_chrom15.txt
+│   │       │   ├── origin_pc1_chrom16.txt
+│   │       │   ├── origin_pc1_chrom17.txt
+│   │       │   ├── origin_pc1_chrom18.txt
+│   │       │   ├── origin_pc1_chrom19.txt
+│   │       │   ├── origin_pc1_chrom1.txt
+│   │       │   ├── origin_pc1_chrom20.txt
+│   │       │   ├── origin_pc1_chrom21.txt
+│   │       │   ├── origin_pc1_chrom22.txt
+│   │       │   ├── origin_pc1_chrom2.txt
+│   │       │   ├── origin_pc1_chrom3.txt
+│   │       │   ├── origin_pc1_chrom4.txt
+│   │       │   ├── origin_pc1_chrom5.txt
+│   │       │   ├── origin_pc1_chrom6.txt
+│   │       │   ├── origin_pc1_chrom7.txt
+│   │       │   ├── origin_pc1_chrom8.txt
+│   │       │   ├── origin_pc1_chrom9.txt
+│   │       │   ├── origin_pc1_chromX.txt
+│   │       │   ├── origin_pc1_chromY.txt
+│   │       │   ├── origin_pearson_chrom10.txt
+│   │       │   ├── origin_pearson_chrom11.txt
+│   │       │   ├── origin_pearson_chrom12.txt
+│   │       │   ├── origin_pearson_chrom13.txt
+│   │       │   ├── origin_pearson_chrom14.txt
+│   │       │   ├── origin_pearson_chrom15.txt
+│   │       │   ├── origin_pearson_chrom16.txt
+│   │       │   ├── origin_pearson_chrom17.txt
+│   │       │   ├── origin_pearson_chrom18.txt
+│   │       │   ├── origin_pearson_chrom19.txt
+│   │       │   ├── origin_pearson_chrom1.txt
+│   │       │   ├── origin_pearson_chrom20.txt
+│   │       │   ├── origin_pearson_chrom21.txt
+│   │       │   ├── origin_pearson_chrom22.txt
+│   │       │   ├── origin_pearson_chrom2.txt
+│   │       │   ├── origin_pearson_chrom3.txt
+│   │       │   ├── origin_pearson_chrom4.txt
+│   │       │   ├── origin_pearson_chrom5.txt
+│   │       │   ├── origin_pearson_chrom6.txt
+│   │       │   ├── origin_pearson_chrom7.txt
+│   │       │   ├── origin_pearson_chrom8.txt
+│   │       │   ├── origin_pearson_chrom9.txt
+│   │       │   ├── origin_pearson_chromX.txt
+│   │       │   └── origin_pearson_chromY.txt
+│   │       └── origin_dropna
+│   │           ├── origin_dropna_PC1_chrom10.txt
+│   │           ├── origin_dropna_PC1_chrom11.txt
+│   │           ├── origin_dropna_PC1_chrom12.txt
+│   │           ├── origin_dropna_PC1_chrom13.txt
+│   │           ├── origin_dropna_PC1_chrom14.txt
+│   │           ├── origin_dropna_PC1_chrom15.txt
+│   │           ├── origin_dropna_PC1_chrom16.txt
+│   │           ├── origin_dropna_PC1_chrom17.txt
+│   │           ├── origin_dropna_PC1_chrom18.txt
+│   │           ├── origin_dropna_PC1_chrom19.txt
+│   │           ├── origin_dropna_PC1_chrom1.txt
+│   │           ├── origin_dropna_PC1_chrom20.txt
+│   │           ├── origin_dropna_PC1_chrom21.txt
+│   │           ├── origin_dropna_PC1_chrom22.txt
+│   │           ├── origin_dropna_PC1_chrom2.txt
+│   │           ├── origin_dropna_PC1_chrom3.txt
+│   │           ├── origin_dropna_PC1_chrom4.txt
+│   │           ├── origin_dropna_PC1_chrom5.txt
+│   │           ├── origin_dropna_PC1_chrom6.txt
+│   │           ├── origin_dropna_PC1_chrom7.txt
+│   │           ├── origin_dropna_PC1_chrom8.txt
+│   │           ├── origin_dropna_PC1_chrom9.txt
+│   │           ├── origin_dropna_PC1_chromX.txt
+│   │           └── origin_dropna_PC1_chromY.txt
+│   ├── Logs
+│   │   ├── EV1_VS_CorrEntry1
+│   │   │   └── 100Kb
+│   │   │       ├── GM12878_Chr10_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr11_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr12_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr13_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr14_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr15_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr16_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr17_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr18_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr19_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr1_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr20_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr21_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr22_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr2_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr3_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr4_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr5_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr6_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr7_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr8_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_Chr9_EV1_CorrEntry1_diff.txt
+│   │   │       ├── GM12878_ChrX_EV1_CorrEntry1_diff.txt
+│   │   │       └── GM12878_ChrY_EV1_CorrEntry1_diff.txt
+│   │   └── HIC001.log
+│   ├── plots
+│   │   └── EV1_VS_CorrEntry1
+│   │       └── 100Kb
+│   │           ├── GM12878_Chr10_100Kb.png
+│   │           ├── GM12878_Chr1_100Kb.png
+│   │           ├── GM12878_Chr11_100Kb.png
+│   │           ├── GM12878_Chr12_100Kb.png
+│   │           ├── GM12878_Chr13_100Kb.png
+│   │           ├── GM12878_Chr14_100Kb.png
+│   │           ├── GM12878_Chr15_100Kb.png
+│   │           ├── GM12878_Chr16_100Kb.png
+│   │           ├── GM12878_Chr17_100Kb.png
+│   │           ├── GM12878_Chr18_100Kb.png
+│   │           ├── GM12878_Chr19_100Kb.png
+│   │           ├── GM12878_Chr20_100Kb.png
+│   │           ├── GM12878_Chr2_100Kb.png
+│   │           ├── GM12878_Chr21_100Kb.png
+│   │           ├── GM12878_Chr22_100Kb.png
+│   │           ├── GM12878_Chr3_100Kb.png
+│   │           ├── GM12878_Chr4_100Kb.png
+│   │           ├── GM12878_Chr5_100Kb.png
+│   │           ├── GM12878_Chr6_100Kb.png
+│   │           ├── GM12878_Chr7_100Kb.png
+│   │           ├── GM12878_Chr8_100Kb.png
+│   │           ├── GM12878_Chr9_100Kb.png
+│   │           ├── GM12878_ChrX_100Kb.png
+│   │           └── GM12878_ChrY_100Kb.png
+│   └── xlsx
+│       ├── GM12878.xlsx
+│       └── K562.xlsx
+└── straw
+    └── example
+        └── Analyzing_Hi_C_Data_with_Straw.ipynb
